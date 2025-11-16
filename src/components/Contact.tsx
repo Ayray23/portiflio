@@ -15,17 +15,17 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      detail: "hello@example.com"
+      detail: "adebisiraymond16@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      detail: "+1 (555) 123-4567"
+      detail: "08134673262"
     },
     {
       icon: MapPin,
       title: "Location",
-      detail: "San Francisco, CA"
+      detail: "Africa"
     }
   ];
 

@@ -53,16 +53,17 @@ const About = () => {
           <div className="bg-card rounded-2xl p-8 md:p-12 shadow-md">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold mb-4">My Journey</h3>
-                <p className="text-muted-foreground mb-4">
-                  With years of experience in web development, I've had the privilege of working 
-                  on diverse projects ranging from small business websites to large-scale applications.
-                </p>
-                <p className="text-muted-foreground">
-                  I believe in continuous learning and staying updated with the latest technologies 
-                  to deliver cutting-edge solutions that make a difference.
-                </p>
+              <div>
+              <h3 className="text-2xl font-bold mb-4">My Journey</h3>
+              <p className="text-muted-foreground mb-4">
+                I started my journey as a curious developer, experimenting with small web projects and learning the ins and outs of design and code. Over time, I expanded into building full-fledged web and mobile applications for a variety of clients and industries.
+              </p>
+              <p className="text-muted-foreground">
+                Every project has taught me something new, and I’m driven by the excitement of creating elegant, user-friendly solutions using the latest technologies.
+              </p>
               </div>
+            </div>
+
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-2">
