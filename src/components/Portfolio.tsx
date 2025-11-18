@@ -7,15 +7,22 @@ const Portfolio = () => {
       title: "E-Commerce Platform",
       category: "Web Development",
       description: "A full-featured online shopping platform with payment integration and admin dashboard.",
-      color: "from-blue-500 to-cyan-500",
+      image: "/11.png",
       link: "https://campus-mart-v10.vercel.app/"
     },
-      {
+    {
       title: "Inventory App",
       category: "Web Application",
       description: "A modern inventory management app for tracking products, stock levels, and real-time updates across multiple stores.",
-      color: "from-violet-500 to-purple-500",
+      image: "/22.png",
       link: "https://inventory-app-one-gamma.vercel.app/"
+    },
+    {
+      title: "SwiftCart Management Tool",
+      category: "Retail POS / Inventory",
+      description: "A full supermarket checkout system with real-time inventory tracking, product management, and seamless sales processing.",
+      image:"/33.png",
+      link: "https://stockpro-six.vercel.app"
     },
     {
       title: "Portfolio Website",
@@ -24,14 +31,7 @@ const Portfolio = () => {
       color: "from-orange-500 to-red-500",
       link: "https://portfolio-three-kappa-68.vercel.app/"
     },
-    {
-      title: "SwiftCart Management Tool",
-      category: "Retail POS / Inventory",
-      description: "A full supermarket checkout system with real-time inventory tracking, product management, and seamless sales processing.",
-      color: "from-green-500 to-emerald-500",
-      link: "https://stockpro-six.vercel.app"
-    },
-
+    
     {
       title: "Restaurant Booking",
       category: "Web Application",
@@ -52,7 +52,7 @@ const Portfolio = () => {
     <section id="portfolio" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Portfolio</h2>
@@ -75,8 +75,23 @@ const Portfolio = () => {
                 <Card 
                   className="border-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
                 >
+                  
                   {/* Thumbnail */}
-                  <div className={`h-48 bg-gradient-to-br ${project.color} relative`}>
+                  <div className="h-48 relative overflow-hidden">
+                    
+                    {/* If image exists → show image */}
+                    {project.image ? (
+                      <img 
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      /* If no image → use gradient color */
+                      <div className={`w-full h-full bg-gradient-to-br ${project.color} group-hover:scale-110 transition-transform duration-500`} />
+                    )}
+
+                    {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                       <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
@@ -94,6 +109,7 @@ const Portfolio = () => {
               </a>
             ))}
           </div>
+
         </div>
       </div>
     </section>

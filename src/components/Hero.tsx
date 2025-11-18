@@ -7,8 +7,6 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen mb:pt-0 mb-4 flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-foreground"
     >
-
-      {/* Subtle background image */}
       <div className="absolute inset-0 z-0">
         <img
           src="/bg-hero.jpg" 
@@ -16,8 +14,6 @@ const Hero = () => {
           className="w-full h-full object-cover opacity-40"
         />
       </div>
-
-      {/* Animated background circles */}
       <div className="absolute inset-0 opacity-10 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-foreground rounded-full filter blur-3xl animate-pulse delay-1000"></div>
