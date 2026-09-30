@@ -42,6 +42,9 @@ const Hero = () => {
                 <a href="https://wa.me/2348134673262" target="_blank" rel="noopener noreferrer"><MessageCircle className="mr-2 w-4 h-4" /> Chat on WhatsApp</a>
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-base px-5 h-12 text-white/80 hover:bg-white/10 hover:text-white">
+                <a href="/cv"><span className="mr-2">CV</span> View CV</a>
+              </Button>
+              <Button asChild size="lg" variant="ghost" className="text-base px-5 h-12 text-white/80 hover:bg-white/10 hover:text-white">
                 <a href="https://github.com/Ayray23" target="_blank" rel="noopener noreferrer"><Github className="mr-2 w-4 h-4" /> GitHub</a>
               </Button>
             </div>
