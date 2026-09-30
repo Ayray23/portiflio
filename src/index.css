@@ -2,106 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
-
+    --foreground: 250 22% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
-
+    --card-foreground: 250 22% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
-
-    --primary: 198 70% 45%;
+    --popover-foreground: 250 22% 10%;
+    --primary: 266 83% 58%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 215 20% 92%;
-    --secondary-foreground: 215 25% 15%;
-
-    --muted: 215 20% 92%;
-    --muted-foreground: 215 16% 50%;
-
-    --accent: 25 95% 58%;
+    --secondary: 250 20% 96%;
+    --secondary-foreground: 250 22% 10%;
+    --muted: 250 20% 95%;
+    --muted-foreground: 250 10% 43%;
+    --accent: 187 92% 42%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 198 70% 45%;
-
-    --radius: 0.5rem;
-    
-    /* Custom Portfolio Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(198 70% 45%) 0%, hsl(215 60% 35%) 100%);
-    --accent-gradient: linear-gradient(135deg, hsl(25 95% 58%) 0%, hsl(15 90% 55%) 100%);
-    --text-hero: 0 0% 100%;
-    --text-muted: 215 16% 60%;
-    
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-    --shadow-glow: 0 0 40px hsl(198 70% 45% / 0.3);
-    
-    /* Transitions */
-    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
+    --border: 250 15% 89%;
+    --input: 250 15% 89%;
+    --ring: 266 83% 58%;
+    --radius: 0.75rem;
+    --hero-gradient: linear-gradient(135deg, hsl(266 83% 58%), hsl(187 92% 42%));
+    --accent-gradient: linear-gradient(135deg, hsl(187 92% 42%), hsl(266 83% 58%));
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.04);
+    --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+    --shadow-lg: 0 18px 50px rgba(0,0,0,.12);
+    --shadow-glow: 0 0 50px hsl(266 83% 58% / .25);
+    --transition-base: all .25s cubic-bezier(.4,0,.2,1);
+    --transition-slow: all .5s cubic-bezier(.4,0,.2,1);
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 215 30% 8%;
+    --background: 250 25% 7%;
     --foreground: 0 0% 98%;
-
-    --card: 215 25% 12%;
+    --card: 250 22% 11%;
     --card-foreground: 0 0% 98%;
-
-    --popover: 215 25% 12%;
+    --popover: 250 22% 11%;
     --popover-foreground: 0 0% 98%;
-
-    --primary: 198 70% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 215 25% 18%;
+    --primary: 267 90% 67%;
+    --primary-foreground: 250 25% 7%;
+    --secondary: 250 18% 16%;
     --secondary-foreground: 0 0% 98%;
-
-    --muted: 215 25% 18%;
-    --muted-foreground: 215 16% 65%;
-
-    --accent: 25 95% 58%;
-    --accent-foreground: 0 0% 100%;
-
+    --muted: 250 18% 16%;
+    --muted-foreground: 250 12% 68%;
+    --accent: 187 92% 52%;
+    --accent-foreground: 250 25% 7%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 215 25% 18%;
-    --input: 215 25% 18%;
-    --ring: 198 70% 50%;
-    
-    --hero-gradient: linear-gradient(135deg, hsl(198 70% 35%) 0%, hsl(215 60% 25%) 100%);
-    --shadow-glow: 0 0 40px hsl(198 70% 45% / 0.4);
+    --border: 250 18% 20%;
+    --input: 250 18% 20%;
+    --ring: 267 90% 67%;
+    --hero-gradient: linear-gradient(135deg, hsl(267 90% 67%), hsl(187 92% 52%));
+    --shadow-glow: 0 0 55px hsl(267 90% 67% / .28);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -114,50 +76,44 @@ All colors MUST be HSL.
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; }
+  ::selection { background: hsl(var(--primary) / .18); }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--hero-gradient);
+  .text-gradient { @apply bg-clip-text text-transparent; background-image: var(--hero-gradient); }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { scrollbar-width: none; }
+  .custom-cursor {
+    position: fixed;
+    left: var(--cursor-x, -100px);
+    top: var(--cursor-y, -100px);
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid hsl(var(--primary));
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: width .15s ease, height .15s ease, opacity .2s ease;
   }
-  
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+  .cv-heading { @apply text-xs font-bold uppercase tracking-[.18em] text-primary border-b border-border pb-2 mb-3; }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor { display: none; }
+}
+
+@media print {
+  body { background: white !important; }
+  .print-hidden, nav, footer { display: none !important; }
+  .cv-paper { box-shadow: none !important; border: 0 !important; max-width: none !important; }
+}
+
+@media (max-width: 640px) {
+  h1 { letter-spacing: -0.035em; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
 }
