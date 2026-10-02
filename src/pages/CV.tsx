@@ -6,9 +6,14 @@ const CV = () => {
 
   return (
     <main className="min-h-screen bg-background py-8 md:py-12">
-      <div className="print-hidden container mx-auto px-4 max-w-4xl flex justify-between items-center mb-6">
+      <div className="print-hidden container mx-auto px-4 max-w-4xl flex justify-between items-center gap-4 mb-6">
         <a href="/" className="font-bold text-xl">Ray<span className="text-accent">echoz</span></a>
-        <Button onClick={printCV}><Download className="mr-2 w-4 h-4" /> Download / Save as PDF</Button>
+        <div className="flex flex-wrap justify-end gap-2">
+          <Button asChild variant="outline">
+            <a href="/Raymond_Adebisi_Cv.pdf" download="Raymond_Adebisi_Cv.pdf"><Download className="mr-2 w-4 h-4" /> Download CV PDF</a>
+          </Button>
+          <Button onClick={printCV}><Download className="mr-2 w-4 h-4" /> Print CV</Button>
+        </div>
       </div>
 
       <article className="cv-paper bg-card text-card-foreground max-w-4xl mx-auto p-7 md:p-12 border border-border shadow-xl">
