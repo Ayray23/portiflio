@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => (
   <section id="home" className="hero-showcase relative min-h-[92svh] lg:min-h-screen overflow-hidden text-white">
     <div className="hero-photo absolute inset-0" aria-hidden="true">
-      <img src="/raymond-hero.jpg" alt="" className="h-full w-full object-cover object-[center_28%]" />
+      <img src="/raymond-hero.jpeg" alt="" className="h-full w-full object-cover object-[center_28%]" />
     </div>
     <div className="hero-shade absolute inset-0" aria-hidden="true" />
     <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
