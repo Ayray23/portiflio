@@ -15,7 +15,7 @@ const projects: Record<string, {
     highlights: ["Google authentication", "Product listings and profiles", "Favorites and sold-item flows", "Supabase storage and database"],
   },
   cbt: {
-    title: "CBT App", category: "EdTech Platform", stack: "React • Vite • Firebase • Capacitor", image: "https://opengraph.githubassets.com/1/Ayray23/Cbt-app",
+    title: "CBT App", category: "EdTech Platform", stack: "React • Vite • Firebase • Capacitor", image: "/44.png",
     live: "https://cbt-app-sooty.vercel.app/", repo: "https://github.com/Ayray23/Cbt-app",
     summary: "A computer-based testing platform for schools to manage exams, questions, submissions, and results.",
     problem: "Schools needed a more structured way to create exams, manage students, run assessments, and review results.",

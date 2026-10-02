@@ -100,10 +100,10 @@ ${message}`;
                   </p>
                 </div>
                 <div className="mt-10 space-y-3">
-                  <Button asChild variant="secondary" size="lg" className="w-full">
+                  <Button asChild size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                     <a href="https://wa.me/2348134673262" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="w-full border-background/30 text-background hover:bg-background hover:text-foreground">
+                  <Button asChild variant="outline" size="lg" className="w-full border-background/40 bg-transparent text-background hover:bg-background hover:text-foreground">
                     <a href="mailto:adebisiraymond16@gmail.com">Email Raymond</a>
                   </Button>
                 </div>
