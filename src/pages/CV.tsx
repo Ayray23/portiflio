@@ -21,7 +21,7 @@ const CV = () => {
           <h1 className="text-4xl md:text-5xl font-black tracking-tight">Adebisi-Rufus Raymond O.</h1>
           <p className="text-lg md:text-xl font-semibold text-primary mt-2">Software Developer | Full-Stack & Mobile Applications</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2 mt-4 text-sm text-muted-foreground">
-            <span><Mail className="inline w-4 h-4 mr-1" />adebisiraymond6@gmail.com</span>
+            <span><Mail className="inline w-4 h-4 mr-1" />adebisiraymond16@gmail.com</span>
             <span><Phone className="inline w-4 h-4 mr-1" />08134673262</span>
             <span><MapPin className="inline w-4 h-4 mr-1" />Osun State, Nigeria</span>
             <a href="https://portiflio-delta.vercel.app" className="underline">Portfolio</a>
