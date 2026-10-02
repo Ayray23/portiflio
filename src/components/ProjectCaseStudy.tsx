@@ -48,7 +48,7 @@ const projects: Record<string, {
   },
   scms: {
     title: "Student Complaint Management System", category: "Campus Software", stack: "React • Vite • Tailwind • Firebase", image: "https://opengraph.githubassets.com/1/Ayray23/SCMS",
-    repo: "https://github.com/Ayray23/SCMS",
+    live: "https://scms-seven-nu.vercel.app/", repo: "https://github.com/Ayray23/SCMS",
     summary: "A structured complaint platform connecting students with administrative workflows.",
     problem: "Student complaints can be difficult to route, track, and manage when handled through informal channels.",
     solution: "Built authentication and complaint workflows with faculty and department structure for a more organized process.",
