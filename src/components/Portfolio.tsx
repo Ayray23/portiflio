@@ -8,8 +8,8 @@ const projects = [
   { slug: "cbt", title: "CBT App", category: "EdTech", stack: "React • Firebase • Capacitor", description: "Computer-based testing platform for exam creation, student assessments, automated grading, and results.", image: "/44.png", link: "https://cbt-app-sooty.vercel.app/", repo: "https://github.com/Ayray23/Cbt-app", featured: true },
   { slug: "remt", title: "REMT", category: "SaaS", stack: "React • Firebase • Express", description: "Requirements management platform with traceability, analytics, collaboration, version history, and AI-assisted workflows.", image: "/1.png", link: "https://remt-60ae7.web.app/", repo: "https://github.com/Ayray23/Requirement-Management-tool", featured: true },
   { slug: "swiftcart", title: "SwiftCart", category: "Business Systems", stack: "React • Firebase • POS", description: "Retail management system covering inventory, roles, dashboards, and checkout operations.", image: "/33.png", link: "https://stockpro-six.vercel.app/", repo: "https://github.com/Ayray23/stockpro", featured: true },
-  { slug: "lms", title: "LearnGrid LMS", category: "Education", stack: "React • Vite • Firebase", description: "Learning management platform foundation for students, lecturers, and administrators.", image: "https://opengraph.githubassets.com/1/Ayray23/lms-system", repo: "https://github.com/Ayray23/lms-system" },
-  { slug: "scms", title: "Student Complaint Management System", category: "Campus Software", stack: "React • Vite • Tailwind • Firebase", description: "Structured complaint platform with authentication and faculty/department management workflows.", image: "https://opengraph.githubassets.com/1/Ayray23/SCMS", link: "https://scms-seven-nu.vercel.app/", repo: "https://github.com/Ayray23/SCMS" },
+  { slug: "lms", title: "LearnGrid LMS", category: "Education", stack: "React • Vite • Firebase", description: "Learning management platform foundation for students, lecturers, and administrators.", image: "https://opengraph.githubassets.com/1/Ayray23/lms-system", featured: true, repo: "https://github.com/Ayray23/lms-system" },
+  { slug: "scms", title: "Student Complaint Management System", category: "Campus Software", stack: "React • Vite • Tailwind • Firebase", description: "Structured complaint platform with authentication and faculty/department management workflows.", image: "https://opengraph.githubassets.com/1/Ayray23/SCMS", link: "https://scms-seven-nu.vercel.app/", featured: true, repo: "https://github.com/Ayray23/SCMS" },
 ];
 
 const categories = ["All", "Marketplace", "EdTech", "SaaS", "Business Systems", "Education", "Campus Software"];
@@ -17,6 +17,9 @@ const categories = ["All", "Marketplace", "EdTech", "SaaS", "Business Systems", 
 const Portfolio = () => {
   const [active, setActive] = useState("All");
   const filtered = useMemo(() => active === "All" ? projects : projects.filter((project) => project.category === active), [active]);
+  const featuredCount = projects.filter((project) => project.featured).length;
+  const liveDemoCount = projects.filter((project) => Boolean(project.link)).length;
+  const publicCodebaseCount = projects.filter((project) => Boolean(project.repo)).length;
 
   return (
     <section id="portfolio" className="py-20 md:py-28 bg-background">
@@ -66,9 +69,9 @@ const Portfolio = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
             {[
-              ["6", "Featured projects"],
-              ["4", "Live demos"],
-              ["6", "Public codebases"],
+              [String(featuredCount), "Featured projects"],
+              [String(liveDemoCount), "Live demos"],
+              [String(publicCodebaseCount), "Public codebases"],
               ["Remote", "Available worldwide"],
             ].map(([value, label]) => (
               <div key={label} className="rounded-2xl border border-border bg-card p-5">
