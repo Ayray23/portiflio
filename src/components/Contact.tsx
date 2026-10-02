@@ -18,14 +18,9 @@ const Contact = () => {
     const message = String(form.get("message") || "");
     const name = String(form.get("name") || "");
     const email = String(form.get("email") || "");
-    const body = `Hi Raymond,
+    const brief = `Hi Raymond,\n\nProject: ${subject}\nName: ${name}\nEmail: ${email}\n\nProject details:\n${message}`;
 
-My name is ${name}.
-Email: ${email}
-
-${message}`;
-
-    window.location.href = `mailto:adebisiraymond16@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `https://wa.me/2348134673262?text=${encodeURIComponent(brief)}`;
   };
 
   return (
@@ -62,7 +57,7 @@ ${message}`;
             <Card className="border-none shadow-lg">
               <CardContent className="p-8 md:p-10">
                 <h3 className="text-2xl font-bold mb-2">Start a conversation</h3>
-                <p className="text-muted-foreground mb-7">Share the basics and your email app will open with a ready-to-send project brief.</p>
+                <p className="text-muted-foreground mb-7">Share the basics and WhatsApp will open with your project brief ready to send.</p>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
