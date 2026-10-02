@@ -1,22 +1,12 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const projects = [
-  { slug: "campusmart", title: "CampusMart", category: "Marketplace", stack: "Next.js • Supabase", description: "Student marketplace with authentication, listings, favorites, sold items, profiles, and storage.", image: "/11.png", link: "https://campus-mart-v10.vercel.app/", repo: "https://github.com/Ayray23/Student-to-student-marketplace", featured: true },
-  { slug: "cbt", title: "CBT App", category: "EdTech", stack: "React • Firebase • Capacitor", description: "Computer-based testing platform for exam creation, student assessments, automated grading, and results.", image: "/44.png", link: "https://cbt-app-sooty.vercel.app/", repo: "https://github.com/Ayray23/Cbt-app", featured: true },
-  { slug: "remt", title: "REMT", category: "SaaS", stack: "React • Firebase • Express", description: "Requirements management platform with traceability, analytics, collaboration, version history, and AI-assisted workflows.", image: "/1.png", link: "https://remt-60ae7.web.app/", repo: "https://github.com/Ayray23/Requirement-Management-tool", featured: true },
-  { slug: "swiftcart", title: "SwiftCart", category: "Business Systems", stack: "React • Firebase • POS", description: "Retail management system covering inventory, roles, dashboards, and checkout operations.", image: "/33.png", link: "https://stockpro-six.vercel.app/", repo: "https://github.com/Ayray23/stockpro", featured: true },
-  { slug: "lms", title: "LearnGrid LMS", category: "Education", stack: "React • Vite • Firebase", description: "Learning management platform foundation for students, lecturers, and administrators.", image: "https://opengraph.githubassets.com/1/Ayray23/lms-system", featured: true, repo: "https://github.com/Ayray23/lms-system" },
-  { slug: "scms", title: "Student Complaint Management System", category: "Campus Software", stack: "React • Vite • Tailwind • Firebase", description: "Structured complaint platform with authentication and faculty/department management workflows.", image: "https://opengraph.githubassets.com/1/Ayray23/SCMS", link: "https://scms-seven-nu.vercel.app/", featured: true, repo: "https://github.com/Ayray23/SCMS" },
-];
-
-const categories = ["All", "Marketplace", "EdTech", "SaaS", "Business Systems", "Education", "Campus Software"];
+import { projectCategories, projects } from "@/data/projects";
 
 const Portfolio = () => {
   const [active, setActive] = useState("All");
-  const filtered = useMemo(() => active === "All" ? projects : projects.filter((project) => project.category === active), [active]);
+  const filtered = active === "All" ? projects : projects.filter((project) => project.category === active);
   const featuredCount = projects.filter((project) => project.featured).length;
   const liveDemoCount = projects.filter((project) => Boolean(project.link)).length;
   const publicCodebaseCount = projects.filter((project) => Boolean(project.repo)).length;
@@ -34,9 +24,9 @@ const Portfolio = () => {
             <a href="https://github.com/Ayray23?tab=repositories" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold hover:text-accent transition-colors shrink-0">Explore GitHub <ArrowUpRight className="w-4 h-4" /></a>
           </div>
 
-          <div className="flex gap-2 overflow-x-auto pb-3 mb-8 scrollbar-hide" role="tablist" aria-label="Filter projects">
-            {categories.map((category) => (
-              <button key={category} onClick={() => setActive(category)} role="tab" aria-selected={active === category} className={`whitespace-nowrap rounded-full border px-4 py-2.5 text-sm font-medium transition-all ${active === category ? "bg-foreground text-background border-foreground" : "bg-card hover:border-primary/50"}`}>
+          <div className="flex gap-2 overflow-x-auto pb-3 mb-8" role="group" aria-label="Filter projects">
+            {projectCategories.map((category) => (
+              <button key={category} type="button" onClick={() => setActive(category)} aria-pressed={active === category} className={`whitespace-nowrap rounded-full border px-4 py-2.5 text-sm font-medium transition-all ${active === category ? "bg-foreground text-background border-foreground" : "bg-card hover:border-primary/50"}`}>
                 {category}
               </button>
             ))}

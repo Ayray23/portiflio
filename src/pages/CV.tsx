@@ -1,7 +1,13 @@
 import { ArrowLeft, Download, Mail, Phone, MapPin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePageMetadata } from "@/hooks/use-page-metadata";
 
 const CV = () => {
+  usePageMetadata({
+    title: "CV | Raymond Adebisi",
+    description: "View or download Raymond Adebisi's CV, including his experience, technical skills, projects, and education.",
+    path: "/cv",
+  });
   const printCV = () => window.print();
 
   return (

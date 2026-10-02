@@ -1,64 +1,19 @@
 import { ArrowLeft, ExternalLink, Github, CheckCircle2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const projects: Record<string, {
-  title: string; category: string; stack: string; image: string; live?: string; repo: string;
-  summary: string; problem: string; solution: string; highlights: string[];
-}> = {
-  campusmart: {
-    title: "CampusMart", category: "Marketplace", stack: "Next.js • Supabase • Google Auth", image: "/11.png",
-    live: "https://campus-mart-v10.vercel.app/", repo: "https://github.com/Ayray23/Student-to-student-marketplace",
-    summary: "A student-focused marketplace for discovering, listing, saving, and managing products.",
-    problem: "Students needed a simple way to discover products and manage marketplace activity without relying on scattered social channels.",
-    solution: "Built a responsive marketplace experience with authentication, listings, favorites, sold items, profiles, and Supabase storage.",
-    highlights: ["Google authentication", "Product listings and profiles", "Favorites and sold-item flows", "Supabase storage and database"],
-  },
-  cbt: {
-    title: "CBT App", category: "EdTech Platform", stack: "React • Vite • Firebase • Capacitor", image: "/44.png",
-    live: "https://cbt-app-sooty.vercel.app/", repo: "https://github.com/Ayray23/Cbt-app",
-    summary: "A computer-based testing platform for schools to manage exams, questions, submissions, and results.",
-    problem: "Schools needed a more structured way to create exams, manage students, run assessments, and review results.",
-    solution: "Created role-aware exam workflows with question management, student submissions, automated objective grading, and result views.",
-    highlights: ["Exam and question management", "Student assessment flow", "Automated MCQ grading", "Admin and result workflows"],
-  },
-  remt: {
-    title: "REMT", category: "SaaS / Project Management", stack: "React • Vite • Firebase • Express", image: "/1.png",
-    live: "https://remt-60ae7.web.app/", repo: "https://github.com/Ayray23/Requirement-Management-tool",
-    summary: "A requirements elicitation and management platform built around analyst workflows and traceability.",
-    problem: "Requirements can become difficult to organize, track, validate, and collaborate on as projects grow.",
-    solution: "Built structured requirement workflows with dashboards, analytics, collaboration, traceability, version history, and an AI-assisted workbench.",
-    highlights: ["Requirements workflow", "Traceability and version history", "Analytics and dashboards", "AI-assisted workbench"],
-  },
-  swiftcart: {
-    title: "SwiftCart", category: "Business Management", stack: "React • Vite • Firebase • POS", image: "/33.png",
-    live: "https://stockpro-six.vercel.app/", repo: "https://github.com/Ayray23/stockpro",
-    summary: "A retail management system for inventory, products, roles, dashboards, and checkout operations.",
-    problem: "Small retail operations need simple tools to keep product, stock, staff, and sales workflows organized.",
-    solution: "Built a practical management interface with role-based workflows, inventory operations, dashboard insights, and checkout.",
-    highlights: ["Inventory management", "Role-based access", "Dashboard insights", "POS / checkout workflow"],
-  },
-  lms: {
-    title: "LearnGrid LMS", category: "Education", stack: "React • Vite • Tailwind • Firebase", image: "https://opengraph.githubassets.com/1/Ayray23/lms-system",
-    repo: "https://github.com/Ayray23/lms-system",
-    summary: "A learning management platform concept for students, lecturers, and administrators.",
-    problem: "Education teams need one place for learning workflows, course information, and role-specific experiences.",
-    solution: "Developed a responsive LMS foundation with separate student, lecturer, and administrator experiences and collaborative learning features.",
-    highlights: ["Student and lecturer experiences", "Admin workflows", "Responsive learning UI", "Firebase-backed architecture"],
-  },
-  scms: {
-    title: "Student Complaint Management System", category: "Campus Software", stack: "React • Vite • Tailwind • Firebase", image: "https://opengraph.githubassets.com/1/Ayray23/SCMS",
-    live: "https://scms-seven-nu.vercel.app/", repo: "https://github.com/Ayray23/SCMS",
-    summary: "A structured complaint platform connecting students with administrative workflows.",
-    problem: "Student complaints can be difficult to route, track, and manage when handled through informal channels.",
-    solution: "Built authentication and complaint workflows with faculty and department structure for a more organized process.",
-    highlights: ["Student authentication", "Complaint submission flow", "Faculty and department structure", "Admin management workflow"],
-  },
-};
+import { projectsBySlug } from "@/data/projects";
+import { usePageMetadata } from "@/hooks/use-page-metadata";
 
 const ProjectCaseStudy = () => {
   const { slug } = useParams();
-  const project = slug ? projects[slug] : undefined;
+  const project = slug ? projectsBySlug[slug] : undefined;
+  usePageMetadata({
+    title: project ? `${project.title} | Raymond Adebisi` : "Project Not Found | Raymond Adebisi",
+    description: project?.summary ?? "The requested project could not be found.",
+    path: `/projects/${slug ?? ""}`,
+    image: project?.image,
+    robots: project ? "index, follow" : "noindex, nofollow",
+  });
 
   if (!project) {
     return (
@@ -81,7 +36,7 @@ const ProjectCaseStudy = () => {
 
           <div className="grid lg:grid-cols-[1.15fr_.85fr] gap-10 items-center mb-14">
             <div>
-              <p className="text-accent font-semibold uppercase tracking-[0.18em] text-sm mb-4">{project.category}</p>
+              <p className="text-accent font-semibold uppercase tracking-[0.18em] text-sm mb-4">{project.caseStudyCategory ?? project.category}</p>
               <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-5">{project.title}</h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">{project.summary}</p>
               <div className="flex flex-wrap gap-2 mb-8">
@@ -90,7 +45,7 @@ const ProjectCaseStudy = () => {
                 ))}
               </div>
               <div className="flex flex-wrap gap-3">
-                {project.live && <Button asChild><a href={project.live} target="_blank" rel="noopener noreferrer">View live project <ExternalLink className="ml-2 w-4 h-4" /></a></Button>}
+                {project.link && <Button asChild><a href={project.link} target="_blank" rel="noopener noreferrer">View live project <ExternalLink className="ml-2 w-4 h-4" /></a></Button>}
                 <Button asChild variant="outline"><a href={project.repo} target="_blank" rel="noopener noreferrer"><Github className="mr-2 w-4 h-4" /> View source</a></Button>
               </div>
             </div>

@@ -1,8 +1,15 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { usePageMetadata } from "@/hooks/use-page-metadata";
 
 const NotFound = () => {
   const location = useLocation();
+  usePageMetadata({
+    title: "Page Not Found | Raymond Adebisi",
+    description: "The requested page could not be found.",
+    path: location.pathname,
+    robots: "noindex, nofollow",
+  });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
