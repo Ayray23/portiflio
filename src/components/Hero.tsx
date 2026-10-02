@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-foreground">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a14] text-white">
       <div className="absolute inset-0 z-0">
         <img src="/bg-hero.jpg" alt="" className="w-full h-full object-cover opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/95 to-primary/35" />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(10,10,20,.96)_0%,rgba(17,15,35,.88)_52%,rgba(35,18,65,.72)_100%)]" />
       </div>
 
       <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
