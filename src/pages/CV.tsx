@@ -1,4 +1,4 @@
-import { Download, Mail, Phone, MapPin, Github } from "lucide-react";
+import { ArrowLeft, Download, Mail, Phone, MapPin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CV = () => {
@@ -7,7 +7,9 @@ const CV = () => {
   return (
     <main className="min-h-screen bg-background py-8 md:py-12">
       <div className="print-hidden container mx-auto px-4 max-w-4xl flex justify-between items-center gap-4 mb-6">
-        <a href="/" className="font-bold text-xl">Ray<span className="text-accent">echoz</span></a>
+        <Button asChild variant="outline">
+          <a href="/"><ArrowLeft className="mr-2 w-4 h-4" /> Back to Portfolio</a>
+        </Button>
         <div className="flex flex-wrap justify-end gap-2">
           <Button asChild variant="outline">
             <a href="/Raymond_Adebisi_Cv.pdf" download="Raymond_Adebisi_Cv.pdf"><Download className="mr-2 w-4 h-4" /> Download CV PDF</a>
